@@ -37,6 +37,41 @@
           <div class="column-full label-wrapper">
             <button type="button" class="add-event">Add New Event</button>
           </div>
+          <dialog>
+            <div>
+              <label for="times">Time of Event&colon;</label>
+            </div>
+            <div>
+              <select name="times" id="times">
+                <option value="">Choose a Time</option>
+                <option value="0600">0600</option>
+                <option value="1000">1000</option>
+                <option value="1400">1400</option>
+                <option value="1800">1800</option>
+              </select>
+            </div>
+            <div>
+              <label for="days">Day of Week&colon;</label>
+            </div>
+            <div>
+              <select name="days-drop-down" id="days-drop-down">
+                <option value="">Choose a day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+              </select>
+            </div>
+            <div>
+              <label for="info">Event Information&colon;</label>
+            </div>
+            <div>
+              <textarea id="info" name="info"></textarea>
+            </div>
+          </dialog>
           <table>
             <thead>
               <tr>
@@ -100,6 +135,9 @@
           </table>
         </div>
       </form>
+      <div class="row column-full">
+        <footer>2024 Week Planner Inc</footer>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
