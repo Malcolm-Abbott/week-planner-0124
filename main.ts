@@ -42,7 +42,7 @@ $form?.addEventListener('submit', (event: Event): void => {
   };
 
   data.entries.push(values);
-  console.log('data.entries:', data.entries);
+  renderTable(values);
 });
 
 $add?.addEventListener('click', (): void => {
@@ -63,6 +63,23 @@ $confirm?.addEventListener('click', (): void => {
 $form?.addEventListener('beforeunload', (event: Event): void => {
   event.preventDefault();
 });
+
+const $tBody = document.querySelector('tbody') as HTMLTableSectionElement;
+if (!$tBody) throw new Error('This $tBody query failed');
+
+function renderTable(entry: Values): HTMLTableRowElement {
+  const $tr = document.createElement('tr') as HTMLTableRowElement;
+  const $t1 = document.createElement('td') as HTMLTableCellElement;
+  const $t2 = document.createElement('td') as HTMLTableCellElement;
+  const $t3 = document.createElement('td') as HTMLTableCellElement;
+  $t1.textContent = `${$times.value}`;
+  $tr.append($t1);
+  $t2.textContent = `${$daysDD.value}`;
+  $tr.append($t2);
+  $tr.append($t3);
+  console.log('function fired', entry); // just put here to use entry. not real
+  return $tr;
+}
 
 // const $days = document.querySelector('#days') as HTMLSelectElement;
 
